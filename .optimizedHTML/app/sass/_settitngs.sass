@@ -1,0 +1,210 @@
+@import vars
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+*:focus
+	outline: none
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Verdana', sans-serif
+	overflow-x: hidden
+	color: $text
+
+img
+	max-width: 100%
+
+a
+	transition: all 0.4s
+	&:hover
+		text-decoration: none
+		color: $accent
+
+h1, .h1
+	font-size: 48px
+	text-transform: uppercase
+	font-weight: 700
+	color: #fff
+	font-family: 'Oswald'
+	&:first-letter
+		color: $accent
+
+h2, .h2
+	font-size: 48px
+	text-transform: uppercase
+	font-weight: 700
+	color: $head
+	font-family: 'Oswald'
+	margin-bottom: 10px
+	&:first-letter
+		color: $accent
+
+h3, .h3
+	font-size: 40px
+	text-transform: uppercase
+	font-weight: 700
+	color: $head
+	font-family: 'Verdana'
+	margin-bottom: 10px
+	&:first-letter
+		color: $accent
+
+.accent
+	color: $accent
+
+
+/* Styling scrollbars for Firefox */
+html, body, div, *
+  scrollbar-width: thin          /* "auto" or "thin"  */
+  scrollbar-color: #CBCFD4 #EDEEEF   /* scroll thumb & track */
+  
+::-webkit-scrollbar
+  width: 5px
+  height: 5px
+::-webkit-scrollbar-track
+  background-color: #999
+::-webkit-scrollbar-track-piece
+  background-color: #ffffff
+::-webkit-scrollbar-thumb
+  height: 50px
+  background-color: $grey
+  border-radius: 3px
+::-webkit-scrollbar-corner
+  background-color: $grey
+::-webkit-resizer
+  background-color: $grey
+
+@mixin background-linear-gradient
+  position: absolute
+  width: 100%
+  height: 100%
+  content: ''
+  top: 0
+  left: 0
+  background: (linear-gradient(top, rgba(0,0,0,0.1) 0%,  rgba(0,0,0,0.1) 21%, rgba(0,0,0,1) 100%))
+
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+.btn
+	font-size: 14px
+	transition: all 0.4s
+	display: inline-flex
+	text-align: center
+	border-radius: 2px
+	align-items: center
+	justify-content: center
+	margin: 0px 5px
+	padding: 8px 19px
+	cursor: pointer
+	color: #fff
+	text-transform: uppercase
+	font-weight: 500
+	font-family: 'Oswald'
+	margin-bottom: 10px
+	&_in
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			width: 30px
+			height: 100%
+			background: url(../images/btn-in.svg) no-repeat center
+			top: 0
+			left: -15px
+			transition: all 0.4s ease-in
+		&:hover:before
+			left: -7px
+
+	&_default
+		border: 1px solid transparentize($accent, 0.3)
+	&_accent
+		background: $accent
+	&_arrow
+		position: relative
+		&:after
+			display: block
+			position: absolute
+			top: 0
+			right: -20px
+			background: url(../images/arrow.svg) no-repeat center
+			width: 40px
+			height: 100%
+			z-index: 10
+			content: ''
+			transition: all 0.4s   ease-in
+		&:hover:after
+			right: -30px
+	&_big
+		font-size: 16px
+		padding: 10px
+		width: 220px
+	&_transparent
+		border: 1px solid
+	&:hover
+		background:  transparentize(#fff, 0.8)
+		color: transparentize($accent, .2)
+		box-shadow: 0 0 10px 0 $border
+
+
+
+
+.block-title
+	text-transform: uppercase
+	border-top: 1px solid $border
+	border-bottom: 1px solid $border
+	display: inline-block
+	padding: 18px 40px
+	font-size: 14px
+	font-weight: 500
+	letter-spacing: 0.3em
+	font-family: 'Oswald'
+
+
+
+.custom-ul
+	counter-reset: list1 /* Инициируем счетчик */
+	padding-left: 0
+	li
+		list-style-type: none
+		padding: 14px 0
+		border-bottom: 1px solid $grey
+		&:last-child
+			border-bottom: none
+		&:before
+			counter-increment: list1 /* Увеличиваем значение счетчика */
+			content: "0"counter(list1) "/ " /* Выводим число */
+			color: $accent
+
+
+
+.bold-descript
+	font-size: 14px
+	font-weight: 700
+	text-transform: uppercase
+	color: $head
+	margin-bottom: 10px
+
+
+.fz-18
+	font-size: 18px
+	

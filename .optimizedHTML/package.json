@@ -22,5 +22,9 @@
 		"gulp-rsync": "0.0.8",
 		"gulp-sass": "^4.0.2",
 		"gulp-uglify-es": "^1.0.4"
+	},
+	"dependencies": {
+		"owl.carousel": "^2.3.4",
+		"rangeslider.js": "^2.3.3"
 	}
 }

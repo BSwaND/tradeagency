@@ -1,62 +1,341 @@
 @import vars
 @import fonts
 @import libs
+@import settitngs
 
-::placeholder
-	color: #666
-
-::selection
-	background-color: $accent
-	color: #fff
-
-input, textarea
-	outline: none
-	&:focus:required:invalid
-		border-color: red
-	&:required:valid
-		border-color: green
-
-body
+.nav
+	padding: 0
+	font-weight: 500
 	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.65
-	font-family: 'Roboto', sans-serif
-	overflow-x: hidden
-	color: $text
-
-// Custom Sass / Remove before use
-
-.container
-	max-width: 700px
-	padding:
-		right: $gutter/2
-		left: $gutter/2
-	margin:
-		left: auto
-		right: auto
-
-.img-responsive
 	display: block
-	max-width: 100%
-	height: auto
+	text-align: center
+	margin-top: 5px
+	font-family: 'Oswald'
+	li
+		list-style: none
+		margin: 0 40px
+		display: inline-block
+	&_header
+		a,
+		.separator
+			display: inline-flex
+			padding: 0 10px
+			justify-content: center
+			align-items: center
+			border-radius: 8px
+			color: #fff
+			&:hover
+				color: $accent
+		&__parent
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				border: 5px solid transparent
+				border-top: 5px solid $accent
+				top: 26px
+				right: 6px
+			&:hover
+				.nav_header__children
+					display: block
+					opacity: 1
+					z-index: 10
+		&__children
+			opacity: 0
+			z-index: -10
+			position: absolute
+			top: 60px
+			left: 0
+			width: 100%
+			padding: 0
+			border: 1px solid $grey
+			border-radius: 8px
+			background: #fff
+			transition: all 0.4s
+			a
+				border: none
+				border-bottom: 1px solid $grey
+				border-radius: 0
+				display: flex
+				align-items: center
+				justify-content: flex-start
+				font-size: 14px
+			li
+				width: 100%
+				&:last-child a
+					border: none
+	.current,
+	active
+		border-bottom: 1px solid $accent
 
-.example-grid
-	display: grid
-	grid-gap: $gutter
-	grid-template-columns: 1fr 1fr
-	grid-template-areas: "left right"
-	> div:first-child
-		grid-area: left
-	> div:last-child
-		grid-area: right
-	+media-breakpoint-down(xs)
-		display: block
-		> div
-			padding: $gutter/2 0
-	
-.example-img
-	width: 100%
 
-.parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
-	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+.main-screen
+	&_maim-page
+		background: url(../images/bg-1.jpg) no-repeat  center
+		background-size: cover
+		.h1
+			font-size: 100px
+			&:first-letter
+				color: #fff
+		&_body
+			text-align: center
+			color: #fff
+			padding-top: 160px
+			padding-bottom: 200px
+			&__control-block
+				margin-top: 60px
+
+	&_bullets
+		background: linear-gradient(0deg, $accent-2 90%, rgba(0,0,0,0) 100%)
+		padding: 180px 0 150px
+
+.bullet_item
+	text-align: center
+	margin-bottom: 30px
+	border: 1px solid transparentize($border, 1)
+	transition: all .4s
+	&_body
+		border-radius: 8px
+		background: $accent-3
+		transition: all .4s
+	&_img
+		border-top-left-radius: 8px
+		border-top-right-radius: 8px
+	&__title
+		text-transform: uppercase
+		color: #fff
+		font-size: 16px
+		border-bottom:  1px solid $border
+		padding: 10px 10px
+		transition: all .4s
+	&__text
+		display: flex
+		height: 180px
+		align-items: center
+		padding:  20px
+		color: $text
+		transition: all .4s
+	&:hover
+		border: 1px solid $border
+		border-radius: 8px
+		.bullet_item
+			&__title
+				background: $accent
+			&__text
+				color: #fff
+			&_body
+				background: none
+
+
+
+
+.header
+	padding: 30px 0 
+	& > .container
+		border-bottom: 1px solid $border
+		padding-bottom: 20px
+	&_control
+		text-align: right
+
+		
+
+.company_section
+	position: relative
+	padding: 150px 0
+	&:before
+		content: ''
+		background: $accent-2
+		width: 30%
+		height: 100%
+		right: 0
+		top: 0
+		position: absolute
+	&_bg-block
+		img
+			border-radius: 8px
+	&_body
+		&__text
+			margin-bottom: 30px
+
+
+
+
+
+
+.advantages
+	&_section
+		background: $accent-2
+		color: #fff
+		padding: 150px 0   120px
+		text-align: center
+		.h2
+			color: #fff
+	&_bullet
+		&_outer
+			margin-top: 60px
+		&_item
+			text-align: center
+			margin-bottom: 30px
+		&_img
+			min-height: 145px
+		&_outer
+		&__title
+			font-size: 14px
+			text-transform: uppercase
+			margin-bottom: 20px
+		&__text
+			color: $text
+
+
+
+
+
+
+.we
+	&_section
+		background: url(../images/bg-2.jpg) no-repeat center
+		background-size: cover
+		padding: 280px 0
+		.h3
+			line-height: 1.4
+
+
+
+
+.plans
+	&_section
+		padding: 150px 0
+		background: $accent-2
+		color: #fff
+		.h2
+			text-align: center
+			color: #fff
+
+.plans_section__owl-carousel
+	.item
+		text-align: center
+		border-radius: 8px
+		background: linear-gradient(180deg, $accent 0 , rgba(0,0,0,0) 90% )
+		padding: 20px
+		margin-top: 60px
+		&_percent
+			&_block
+				position: absolute
+				border: 10px solid rgba(0,0,0,0.1)
+				border-radius: 50%
+				border-top-color: transparent
+				border-left-color: transparent
+				width: 120px
+				height: 120px
+				top: -50%
+				left: 50%
+				text-align: center
+				transform: translate(-50%, -10%) rotate(45deg)
+				&__inner
+					display: flex
+					flex-direction: column
+					justify-content: center
+					background: $accent-2
+					transform: rotate(-45deg)
+					border-radius: 50%
+					height: 100px
+					width: 100px
+
+			&_dit
+				font-size: 18px
+				font-weight: 700
+				
+		&_title
+			position: relative
+			font-size: 30px
+			font-weight: 700
+			color: #fff
+			font-family: Oswald
+			padding-left: 40px
+			display: inline-block
+			&:before
+				opacity: 0.2
+				content: ''
+				background: url(../images/plans-item.svg) no-repeat center
+				position: absolute
+				width: 30px
+				height: 100%
+				left: 0px
+				top: 0
+				z-index: 10
+		&_head
+			position: relative
+			padding-top:  85px
+		&_body
+			padding: 30px 0 60px
+			&_row
+				display: flex
+				justify-content: space-between
+				border-bottom: 1px solid $border
+				padding: 8px 10px
+			&_td
+	.owl-stage
+		.owl-item
+			&:nth-child(1)  .item
+				background: linear-gradient(180deg, #534369 0 , rgba(0,0,0,0) 90% )
+			&:nth-child(2)   .item
+				background: linear-gradient(180deg, #435672 0 , rgba(0,0,0,0) 90% )
+			&:nth-child(3)   .item
+				background: linear-gradient(180deg, $accent 0 , rgba(0,0,0,0) 90% )
+			&:nth-child(4)   .item
+				background: linear-gradient(180deg, #20182A 0 , rgba(0,0,0,0) 90% )
+			&:nth-child(5)   .item
+				background: linear-gradient(180deg, $accent 0 , rgba(0,0,0,0) 90% )
+
+	.owl-nav
+		position: absolute
+		top:  50%
+		transform: translateY(-50%)
+		width: 100%
+		.owl-next,
+		.owl-prev
+			border-radius: 50%
+			border: 1px solid #fff  !important
+			display: inline-block
+			font-size: 30px !important
+			width: 60px
+			height: 60px
+			position: absolute
+			transition: all 0.4s
+			&:hover
+				background: transparentize($accent, 0.8)
+			&:focus
+				outline: none
+		.owl-next
+			right: -80px
+		.owl-prev
+			left: -80px
+
+
+
+
+
+
+
+
+
+
+.calc-block
+	&_section
+		text-align: center
+		background: $accent-3
+		color: #fff
+		padding: 150px	0
+	&__title
+		border-top: 1px solid	$border
+		border-bottom: 1px solid	$border
+		padding: 8px 0
+		text-transform: uppercase
+		font-size: 16px
+	&_start-control
+		margin-right: 30px
+	&_end-control
+		margin-left: 30px
+
+
+@import media
