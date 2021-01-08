@@ -18,13 +18,138 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
-			
+	.header
+		.btn
+			margin: 0 0px 10px
+
 // ≥992px
 +media-breakpoint-down(md)
 
 // ≥768px
 +media-breakpoint-down(sm)
+	.h2, h2
+		font-size: 28px
+	.h3, h3
+		font-size: 22px
 		
+	.hamburger
+		display: block
+
+	.nav
+		li
+			display: block
+		&_header
+			position: fixed
+			display: block
+			background: #fff
+			width: 100%
+			padding: 30px 15px
+			z-index: 30
+			left: -100%
+			top: 80px
+			right: 0
+			bottom: 0
+			transition: all 0.4s ease-in
+			li
+				display: block
+				margin-bottom: 15px
+				border-bottom: 1px solid  #ddd
+				padding-bottom: 15px
+			a
+				color: $accent
+		&_footer
+			margin: 60px 0 90px
+			li
+				margin-left: 0
+
+
+	.main-screen
+		&_maim-page
+			.h1
+				font-size: 40px
+			&_body
+				padding: 0
+
+	.header
+		&>.container
+			border-bottom: none
+
+	.company_section
+		&:before
+			display: none
+		&_bg-block
+			display: none
+
+	.bullet_item
+		&:hover
+			border-color: transparent
+
+	.we_section
+		padding: 150px 0
+		.container
+			background: rgba(255,255,255, .1)
+
+	.plans_section
+		.btn
+			width: 100%
+
+
+	.calc-block
+		&_start-control
+			margin-bottom: 60px
+			margin-right: 0
+		&_end-control
+			margin-bottom: 60px
+			margin-left: 0
+		&_control
+			margin-bottom: 60px
+			padding: 0 40px
+		.current
+			bottom: 0
+			font-size: 11px
+			&:before
+				display: none
+		.result
+			padding: 45px 20px 30px
+		.profit-line
+			flex-wrap: wrap
+			justify-content: center
+
+	.plans_section__owl-carousel
+		.owl-nav
+			top: -80px
+			.owl-next
+				right: 0
+			.owl-prev
+				left: 0
+				
+
+
+	.form-block_consultation
+		.btn
+			width: 100%
+
+
+
+	.trading-widget
+		&__section
+			padding-bottom: 60px
+
+
+	.footer
+		border-top: 2px solid $accent
+		padding: 60px 0 0
+		&_sub
+			margin-top: 30px
+			&_control
+				margin-bottom: 30px
+				text-align: center
+		&_info_item
+			&__marker
+				height: 40px
+				flex: 0 0 40px
+
+
 // ≥576px
 +media-breakpoint-down(xs)
 	.header

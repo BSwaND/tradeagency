@@ -3,6 +3,14 @@
 @import libs
 @import settitngs
 
+
+.logo
+	&__footer
+		margin-bottom: 30px
+		display: block
+
+
+
 .nav
 	padding: 0
 	font-weight: 500
@@ -16,6 +24,8 @@
 		margin: 0 40px
 		display: inline-block
 	&_header
+		&__active
+			left: 0 !important
 		a,
 		.separator
 			display: inline-flex
@@ -69,6 +79,17 @@
 		border-bottom: 1px solid $accent
 
 
+	&_footer
+		text-align: left
+		li
+			margin-bottom: 20px
+		a
+			color: #fff
+
+
+
+
+
 .main-screen
 	&_maim-page
 		background: url(../images/bg-1.jpg) no-repeat  center
@@ -98,6 +119,8 @@
 		border-radius: 8px
 		background: $accent-3
 		transition: all .4s
+		max-width: 375px
+		margin:         auto
 	&_img
 		border-top-left-radius: 8px
 		border-top-right-radius: 8px
@@ -283,9 +306,9 @@
 			&:nth-child(3)   .item
 				background: linear-gradient(180deg, $accent 0 , rgba(0,0,0,0) 90% )
 			&:nth-child(4)   .item
-				background: linear-gradient(180deg, #20182A 0 , rgba(0,0,0,0) 90% )
+				background: linear-gradient(180deg, #B16E59 0 , rgba(0,0,0,0) 90% )
 			&:nth-child(5)   .item
-				background: linear-gradient(180deg, $accent 0 , rgba(0,0,0,0) 90% )
+				background: linear-gradient(180deg, #CFCFCF 0 , rgba(0,0,0,0) 90% )
 
 	.owl-nav
 		position: absolute
@@ -321,6 +344,7 @@
 
 
 .calc-block
+	padding-top: 30px
 	&_section
 		text-align: center
 		background: $accent-3
@@ -332,10 +356,203 @@
 		padding: 8px 0
 		text-transform: uppercase
 		font-size: 16px
+		margin-bottom: 30px
 	&_start-control
 		margin-right: 30px
 	&_end-control
 		margin-left: 30px
+	&_control
+		border-bottom: 1px solid $border
+		padding-bottom: 120px
+		margin-bottom: 120px
+
+	&_line
+		//position: relative
+		&__min-max
+			display: flex
+			justify-content: space-between
+			margin-bottom: 10px
+			font-size: 14px
+			color: #554E5F
+	&_footer
+		text-align: center
+		margin-top: 60px
+			
+
+	.current
+		position: absolute
+		bottom: -60px
+		font-size: 14px
+		padding: 8px 10px
+		background: $accent-2
+		text-align: center
+		border-radius: 44px
+		white-space: nowrap
+		&:before
+			border: 10px solid transparent
+			border-bottom: 10px solid $accent-2
+			content: ''
+			position: absolute
+			z-index: 10
+			top: -19px
+			left: 50%
+			transform: translateX(-50%)
+	
+	.title
+		text-transform: uppercase
+		text-align: center
+		margin-bottom: 30px
+	.card
+		text-align: left
+
+	.result
+		padding: 45px 100px 30px
+		background: $accent-2
+		text-transform: uppercase
+		margin-bottom: 30px
+		&__integer
+			display: flex
+			border: 1px solid $border
+			border-radius: 8px
+			text-align: center
+			flex: 0 1 170px
+			justify-content: center
+			padding: 7px
+
+	.profit-line
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+
+.rangeslider
+	&--horizontal
+		height: 10px
+	&__fill
+		background: linear-gradient(90deg, $accent 0 , $accent-2 100%)
+	&__handle
+		height: 24px
+		width: 24px
+		top: -7px !important
+		&:after
+			height: 10px
+			width: 10px
+			background: $accent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-block
+	&_section
+		background: url("../images/bg-3.jpg") no-repeat center
+		-webkit-background-size: cover
+		background-size: cover
+		padding: 150px 0
+	&_consultation
+		padding: 60px 0  0
+		&_outer
+			text-align: center
+		&__label
+			flex-direction: column
+			display: flex
+			justify-content: left
+			span
+				display: block
+				text-align: left
+				margin-bottom: 10px
+			input
+				border: none
+				font-size: 14px
+				padding: 13px 10px
+		.btn
+			width: 400px
+
+
+
+
+
+
+
+
+.trading-widget
+	&__section
+		padding: 150px 0
+		background: $footer-color
+		color: #fff
+
+
+
+
+
+
+.footer
+	background: $footer-color  url("../images/bg-footer.jpg") no-repeat bottom
+	padding: 120px 0 0
+	&_descript
+
+	&_sub
+		background: #1E1529
+		display: flex
+		padding: 14px 0 10px
+		margin-top: 100px
+		&_control
+			flex: 0 0 auto
+		&_cooperate
+			flex: 10 0 auto
+			text-align: center
+	&_descript
+		margin-bottom: 30px
+		font-size: 12px
+
+	.btn_arrow:after
+		width: 30px
+		
+	.nav
+		margin-bottom: 60px
+		li
+			display: block
+		
+
+
+
+
+
+
+.footer_info
+	&_item
+		display: flex
+		&__marker
+			display: flex
+			height: 60px
+			flex: 0 0 60px
+			justify-content: center
+			border-radius: 50%
+			border: 1px solid $border
+			margin: 0 25px 60px 0
+		&__body
+		&__title
+			text-transform: uppercase
+			color: #fff
+			font-size: 16px
+			font-family: 'Oswald'
+		&__text
+
+
+
+
+
+
 
 
 @import media

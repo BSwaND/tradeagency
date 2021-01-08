@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	function recalc() {
 		var amount = parseFloat(jQuery('#amount').val());
 		var months = parseFloat(jQuery('#period').val());
-		var divAmountLeft = parseFloat(jQuery('.slider.amount').find('.rangeslider__handle').css('left')) - 10;
-		var divPeriodLeft = parseFloat(jQuery('.slider.period').find('.rangeslider__handle').css('left')) - 10;
+		var divAmountLeft = parseFloat(jQuery('.slider.amount').find('.rangeslider__handle').css('left')) - 20;
+		var divPeriodLeft = parseFloat(jQuery('.slider.period').find('.rangeslider__handle').css('left')) + 5;
 		jQuery('.slider.amount .current').html(amount + ' USD').css('left', divAmountLeft + 'px');
 		jQuery('.slider.period .current').html(months + ' месяцев').css('left', divPeriodLeft + 'px');
 		var plans = JSON.parse(jQuery('.slider.amount').attr('data-plans') || '{}');
@@ -66,7 +66,34 @@ document.addEventListener("DOMContentLoaded", function() {
 		jQuery('.profit .perc-total span').html(totalPerc + ' %');
 		jQuery('.profit .profit-total span').html(totalProfit + ' USD');
 	}
+
+
+	function scrolingTop(){
+		jQuery(window).scroll(function() {
+			var q = jQuery(this);
+			var goToUp = document.querySelector(".btn_up");
+
+			if (q.scrollTop() > 800) {
+				goToUp.classList.add("btn_up_active");
+			} else{
+				goToUp.classList.remove("btn_up_active");
+			}
+		});
+		jQuery('.btn_up').click(function() {
+			jQuery('body,html').animate({scrollTop:0},800);
+		});
+	}
+	scrolingTop();
 	
 
+	function openMobMenu(){
+		jQuery('.hamburger').click(function (){
+			jQuery(this).toggleClass('is-active');
+			jQuery('body').toggleClass('overflow-hidden')
+			jQuery('.nav_header').toggleClass('nav_header__active')
+		})
+	}
+	openMobMenu();
 
+	
 });
