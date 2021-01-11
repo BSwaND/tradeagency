@@ -22,6 +22,11 @@
 		.btn
 			margin: 0 0px 10px
 
+	.form-block_img
+		right: -200px
+		opacity: 0.2
+
+
 // ≥992px
 +media-breakpoint-down(md)
 
@@ -126,8 +131,14 @@
 
 
 	.form-block_consultation
+		&__btn-outer
+			&__pc
+				display: none
+			&__mob
+				display: block
 		.btn
 			width: 100%
+			
 
 
 
@@ -149,6 +160,12 @@
 				height: 40px
 				flex: 0 0 40px
 
+
+	.form-block_img
+		display: none
+
+	.section
+		padding: 80px 0
 
 // ≥576px
 +media-breakpoint-down(xs)

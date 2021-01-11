@@ -17,6 +17,33 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 	})
+	jQuery('.certificate_owl').owlCarousel({
+		loop:false,
+		margin:30,
+		nav:true,
+		dots: false,
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:2
+			},
+			1000:{
+				items:4
+			}
+		}
+	})
+	
+
+
+ function togleLiFaq()  {
+	 jQuery('.custom-ul_faq_body').click(function (){
+		 jQuery(this).find('.custom-ul_faq__text').fadeToggle(400)
+		})
+ }togleLiFaq();
+
+
 
 	jQuery('.calculator input[type="range"]').rangeslider({
 		polyfill: false,
