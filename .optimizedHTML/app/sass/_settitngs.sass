@@ -53,7 +53,7 @@ h1, .h1
 	border-top: 1px solid #6A656C
 	border-bottom: 1px solid #6A656C
 	margin: 45px 0
-	padding: 0px 10%
+	padding: 0px 15%
 	display: inline-block
 
 
@@ -432,3 +432,70 @@ html, body, div, *
 
 .section
 	padding: 150px 0
+	&_accent
+		background: $accent-2
+
+.color
+	&_fff
+		color: #fff
+
+
+// Star pagination
+.pagination
+	.pagination-start,
+	.pagination-prev,
+	.pagination-next,
+	.pagination-end
+		border: none
+
+.pagination-list
+	display: block
+	margin: 30px auto 10px
+	text-align: center
+	padding: 0px
+	li
+		display: inline-block
+		min-height: 42px
+		min-width: 42px
+		border: 1px solid #433C4F
+		text-align: center
+		line-height: 30px
+		font-size: 14px
+		border-radius: 3px
+		margin: 0 5px
+		transition: all .4s
+		&:hover
+			box-shadow: 0 0 5px 0 $text
+		&::before
+			display: none !important
+		a,
+		.active
+			display: flex
+			padding: 0 10px
+			color: $text
+			height: 42px
+			justify-content: center
+			align-items: center
+			&:hover
+				text-decoration: none
+				color: #fff
+				transition: all 0.4s
+				background: #433C4F
+				border-radius: 3px
+		.active
+			background: #433C4F
+			color: #fff
+
+
+
+@media (max-width: 768px)
+	.pagination-list
+		li
+			display: inline-block
+		.pagination-start,
+		.pagination-prev,
+		.pagination-next,
+		.pagination-end
+			display: none
+
+// End pagination

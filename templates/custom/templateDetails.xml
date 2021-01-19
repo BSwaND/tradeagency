@@ -31,8 +31,9 @@
 		<position>header</position>
 		<position>breadcrumbs</position>
 		<position>footer</position>
-		<position>control_sub_footer</position>
+		<position>control_in_reg</position>
 		<position>ticker_tape_little</position>
+		<position>last_news</position>
 	</positions>
 	<languages folder="language">
 		<language tag="en-GB">language/en-GB/en-GB.tpl_custom.ini</language>

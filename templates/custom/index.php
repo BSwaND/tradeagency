@@ -16,7 +16,7 @@
 
 	// Подключение своих стилей:
 	JHtml::_('stylesheet', 'styles.min.css', array('version' => 'v=1.3', 'relative' => true));
-
+	JHtml::_('stylesheet', 'custom.css', array('version' => 'v=1.3', 'relative' => true));
 
 	//Протокол Open Graph
 	$pageTitle = $document->getTitle();
@@ -47,6 +47,7 @@
 <html lang="<?php echo $this->language; ?>" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/images/favicon.ico">
 	<jdoc:include type="head"/>
 </head>
 
@@ -61,12 +62,11 @@
 			<div class="col-md-4 col-lg-2">
 				<div class="">
 					<a href="/" class="logo__footer">
-						<img src="/images/logo-footer.svg" alt="logo">
+						<img src="/images/logo.svg" alt="logo">
 					</a>
-					<div class="footer_descript">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua.
+					<div class="footer_descript">
 					</div>
-					<a href="#" class="btn btn_accent btn_arrow">Инвестировать </a>
+					<a href="#" class="btn btn_big btn_accent btn_arrow">Инвестировать </a>
 				</div>
 			</div>
 			<div class="offset-md-2 col-md-6 col-lg-2">
@@ -80,7 +80,7 @@
 						</div>
 						<div class="footer_info_item__body">
 							<div class="footer_info_item__title">Адрес:</div>
-							<div class="footer_info_item__text">Seychelles, Mahe, Providence, Rue de la Perle, Global Gateway 8</div>
+							<div class="footer_info_item__text">Seychelles, Mahe, Providence, <br>Rue de la Perle, Global Gateway 8</div>
 						</div>
 					</div>
 					<div class="footer_info_item">
@@ -126,7 +126,7 @@
 		<div class="container">
 			<div class="d-md-flex align-items-center">
 				<div class="footer_sub_control">  
-					<jdoc:include type="modules" name="control_sub_footer" style="none"/>
+					<jdoc:include type="modules" name="control_in_reg" style="none"/>
 				</div>
 				<div class="footer_sub_cooperate">© <?php echo date('Y'); ?>  Все права защищены</div>
 			</div>
@@ -135,7 +135,8 @@
 </footer>
 
 <div class="btn_up"></div>
-<!-- Подключение скриптов в конце документа -->
+
 <script src="/templates/<?php echo $this->template; ?>/js/scripts.min.js"></script>
+<script src="/templates/<?php echo $this->template; ?>/js/custom.js"></script>
 </body>
 </html>

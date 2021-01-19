@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		margin:30,
 		nav:true,
 		dots: false,
+		mouseDrag: false,
+		pullDrag: false,
 		responsive:{
 			0:{
 				items:1
@@ -60,12 +62,16 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 	function recalc() {
-		var amount = parseFloat(jQuery('#amount').val());
-		var months = parseFloat(jQuery('#period').val());
-		var divAmountLeft = parseFloat(jQuery('.slider.amount').find('.rangeslider__handle').css('left')) - 20;
-		var divPeriodLeft = parseFloat(jQuery('.slider.period').find('.rangeslider__handle').css('left')) + 5;
+	let amount = parseFloat(jQuery('#amount').val());
+	let months = parseFloat(jQuery('#period').val());
+	let divAmountLeft = parseFloat(jQuery('.slider.amount').find('.rangeslider__handle').css('left')) - 20;
+	let divPeriodLeft = parseFloat(jQuery('.slider.period').find('.rangeslider__handle').css('left')) + 5;
+
+	let monthsName =  (months == 3 || months == 4) ? 'месяца' : 'месяцев' ;
+
+
 		jQuery('.slider.amount .current').html(amount + ' USD').css('left', divAmountLeft + 'px');
-		jQuery('.slider.period .current').html(months + ' месяцев').css('left', divPeriodLeft + 'px');
+		jQuery('.slider.period .current').html(months +' '+ monthsName).css('left', divPeriodLeft + 'px');
 		var plans = JSON.parse(jQuery('.slider.amount').attr('data-plans') || '{}');
 		if (!amount || !plans) return false;
 		var planName = '';
@@ -122,5 +128,21 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	openMobMenu();
 
+
+
+		jQuery('.popup-gallery').magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			tLoading: 'Loading image #%curr%...',
+			mainClass: 'mfp-img-mobile',
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+			},
+			image: {
+				tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+			}
+		});
 	
 });

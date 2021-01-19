@@ -16,6 +16,10 @@
 		li
 			margin: 0 12px
 
+	.blog_item__img
+		img
+			height: 192px
+
 // ≥1200px
 +media-breakpoint-down(lg)
 	.header
@@ -32,10 +36,15 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
+	.h1, h1
+		font-size: 32px
+		line-height: normal
 	.h2, h2
-		font-size: 28px
+		font-size: 24px
+		line-height: normal
 	.h3, h3
 		font-size: 22px
+		line-height: normal
 		
 	.hamburger
 		display: block
@@ -166,6 +175,21 @@
 
 	.section
 		padding: 80px 0
+		
+		
+	.btn_round__title
+		display: none
+
+	.arrow-ul
+		li
+			padding-left: 30px
+			&:before
+				width: 20px
+
+	.certificate_owl
+		.owl-nav
+			display: none
+
 
 // ≥576px
 +media-breakpoint-down(xs)
